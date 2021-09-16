@@ -1,65 +1,22 @@
 apply plugin: 'com.android.library'
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'pageindicatorview'
-
-    publishedGroupId = 'com.romandanylyk'
-    libraryName = 'PageIndicatorView'
-    artifact = 'pageindicatorview'
-
-    libraryDescription = 'Page indicator for android ViewPager'
-
-    siteUrl = 'https://github.com/romandanylyk/PageIndicatorView'
-    gitUrl = 'https://github.com/romandanylyk/PageIndicatorView.git'
-
-    libraryVersion = '1.0.3'
-
-    developerId = 'romandanylyk'
-    developerName = 'Roman Danylyk'
-    developerEmail = 'romandanylyk96@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
+apply plugin: 'kotlin-android'
+apply plugin: "com.vanniktech.maven.publish"
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 30
 
-    defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
-    repositories {
-        maven { url "https://maven.google.com" }
-    }
-    implementation 'androidx.annotation:annotation:1.0.0'
-    implementation 'androidx.core:core:1.0.0'
+    implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.core:core:1.6.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
-}
-
-allprojects {
-    tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-        options.addStringOption('encoding', 'UTF-8')
-    }
-
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
 }

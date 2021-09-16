@@ -11,26 +11,18 @@
 
 ### **Integration**
 To add `pageindicatorview` to your project, first make sure in root `build.gradle` you have specified the following repository:
-```groovy
-    repositories {
-        jcenter()
-    }
-```
->***Note***: by creating new project in Android Studio it will have `jcenter` repository specified by default, so you will not need to add it manually.
 
-Once you make sure you have `jcenter` repository in your project, all you need to do is to add the following line in `dependencies` section of your project `build.gradle`.
- 
-See latest library version [ ![Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) ](https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion)
-```groovy
-implementation 'com.romandanylyk:pageindicatorview:X.X.X'
-```
-If your project already use `appcompat-v7` support library, you can omit `PageIndicatorView` dependencies by adding a single .aar file to your project, that will decrease total amount of methods used in your project.
+USAGE
+-----
 
 ```groovy
-implementation 'com.romandanylyk:pageindicatorview:X.X.X@aar'
+implementation 'tech.abd3lraouf:pageindicatorview:1.0.3'
 ```
+or
 
-Keep in mind, that `PageIndicatorView` has min [API level 14](https://developer.android.com/about/dashboards/index.html) and these dependencies:
+```kotlin
+implementation("tech.abd3lraouf:pageindicatorview:1.0.3")
+```
 
 ```groovy
 implementation 'com.android.support:appcompat-v7:27.1.1'
